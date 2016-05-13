@@ -29,9 +29,9 @@ public class MainMenuFragment extends Fragment {
                              Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_main_menu, container, false);
 
-         String[] menuItems = {"Do Somethinggggg!",
-                                  "Do something else :(",
-                                    "Do yet another thanng!"};
+         String[] menuItems = {"My Bomb ",
+                                  "Bomber's Posts",
+                                    "My Bombers list"};
 
         ListView listView = (ListView)view.findViewById(R.id.mainMenu);
 
@@ -52,9 +52,14 @@ public class MainMenuFragment extends Fragment {
                    Intent intent = new Intent(getActivity(), SomeOtherActivity.class);
                     startActivity(intent);
                 }else if(position == 1){
-                    Toast.makeText(getActivity(), "you clicked the second item!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), StoriesActivity.class);
+                    startActivity(intent);
                 }else if (position == 2){
-                    Toast.makeText(getActivity(), "you clicked the third item!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), MyFriendsActivity.class);
+                    startActivity(intent);
+                } else if (position == 3) {
+                    Intent intent = new Intent(getActivity(), LogoutActivity.class);
+                    startActivity(intent);
                 }
             }
         });
