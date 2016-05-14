@@ -31,7 +31,8 @@ public class MainMenuFragment extends Fragment {
 
          String[] menuItems = {"My Bomb ",
                                   "Bomber's Posts",
-                                    "My Bombers list"};
+                                    "My Bombers list",
+                                        "logout"};
 
         ListView listView = (ListView)view.findViewById(R.id.mainMenu);
 
