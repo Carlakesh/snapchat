@@ -32,12 +32,13 @@ public class LoginFragment extends Fragment {
 
         String[] loginMenuItems = {"Register",
                 "Log In"};
-        ListView listView = view.findViewById(R.id.loginMenu);
+        ListView listView = (ListView)view.findViewById(R.id.loginMenu);
+
 
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_2,
-                menuItems
+                loginMenuItems
         );
 
         listView.setAdapter(listViewAdapter);
@@ -47,14 +48,15 @@ public class LoginFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if (position == 0) {
-                    Intent intent = new Intent(getActivity(), Register.class);
+                    Intent intent = new Intent(getActivity(), RegisterActivity.class);
                     startActivity(intent);
                 } else if (position == 1) {
-                    Intent intent = new Intent(getActivity(), Login.class);
+                    Intent intent = new Intent(getActivity(), LoginActivity.class);
                     startActivity(intent);
                 }
             }
 
-            );
+        });
+
         }
     }
