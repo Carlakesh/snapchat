@@ -12,6 +12,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -29,6 +32,8 @@ public class MainMenuFragment extends Fragment {
                              Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_main_menu, container, false);
 
+
+
          String[] menuItems = {"My Bomb ",
                                   "Bomber's Posts",
                                     "My Bombers list",
@@ -44,6 +49,8 @@ public class MainMenuFragment extends Fragment {
         );
 
         listView.setAdapter(listViewAdapter);
+
+
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
