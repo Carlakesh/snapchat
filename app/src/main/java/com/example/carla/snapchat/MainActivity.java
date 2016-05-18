@@ -18,8 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MainMenuFragment mainMenu = new MainMenuFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.container, mainMenu).commit();
+        LoginMenuFragment loginMenu = new LoginMenuFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, loginMenu).commit();
 
         Backendless.initApp(this, APP_ID, SECRET_KEY, VERSION);
     }

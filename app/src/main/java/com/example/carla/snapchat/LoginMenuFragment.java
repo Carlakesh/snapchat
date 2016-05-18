@@ -15,10 +15,10 @@ import android.widget.ListView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LoginFragment extends Fragment {
+public class LoginMenuFragment extends Fragment {
 
 
-    public LoginFragment() {
+    public LoginMenuFragment() {
         // Required empty public constructor
     }
 
@@ -27,7 +27,7 @@ public class LoginFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        View view = inflater.inflate(R.layout.fragment_login, container, false);
 
 
         String[] loginMenuItems = {"Register",
@@ -37,7 +37,7 @@ public class LoginFragment extends Fragment {
 
         ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
                 getActivity(),
-                android.R.layout.simple_list_item_2,
+                android.R.layout.simple_list_item_1,
                 loginMenuItems
         );
 
@@ -58,5 +58,6 @@ public class LoginFragment extends Fragment {
 
         });
 
+        return view;
         }
     }

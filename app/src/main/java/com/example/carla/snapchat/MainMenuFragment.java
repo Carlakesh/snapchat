@@ -37,7 +37,8 @@ public class MainMenuFragment extends Fragment {
          String[] menuItems = {"My Bomb ",
                                   "Bomber's Posts",
                                     "My Bombers list",
-                                        "logout"};
+                                        "logout"
+                                            };
 
         ListView listView = (ListView)view.findViewById(R.id.mainMenu);
 
@@ -68,6 +69,7 @@ public class MainMenuFragment extends Fragment {
                 } else if (position == 3) {
                     Intent intent = new Intent(getActivity(), LogoutActivity.class);
                     startActivity(intent);
+
                 }
             }
         });

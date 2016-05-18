@@ -10,7 +10,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        LoginFragment loginMenu = new LoginFragment();
+        LoginMenuFragment loginMenu = new LoginMenuFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.container, loginMenu).commit();
     }
 }
