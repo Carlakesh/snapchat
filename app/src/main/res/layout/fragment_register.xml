@@ -2,15 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginMenuFragment"
+    tools:context="com.example.carla.snapchat.RegisterFragment"
     android:orientation="vertical">
 
-
-    <EditText
-        android:hint="Username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/usernameField" />
+  <EditText
+      android:hint="Username"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:id="@+id/usernameField" />
 
     <EditText
         android:hint="Password"
@@ -21,9 +20,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="login"
-        android:id="@+id/LoginButton" />
-
-
-
+        android:text="Register"
+        android:id="@+id/registerButton" />
 </LinearLayout>

@@ -9,5 +9,8 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        RegisterFragment register = new RegisterFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.registerContainer, register).commit();
     }
 }
