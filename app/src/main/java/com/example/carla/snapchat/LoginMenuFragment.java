@@ -48,36 +48,7 @@ public class LoginMenuFragment extends Fragment {
 
 
 
-      //  String[] loginMenuItems = {"Register",
-      //          "Log In"};
-      //  ListView listView = (ListView)view.findViewById(R.id.loginMenu);
 
-
-     //   ArrayAdapter<String> listViewAdapter = new ArrayAdapter<String>(
-       //         getActivity(),
-        //        android.R.layout.simple_list_item_1,
-          //      loginMenuItems );
-
-       // listView.setAdapter(listViewAdapter);
-
-
-       // listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-         //   @Override
-           // public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-             //   if (position == 0) {
-               //     Intent intent = new Intent(getActivity(), RegisterActivity.class);
-                 //   startActivity(intent);
-                //} else if (position == 1) {
-                  //  Intent intent = new Intent(getActivity(), LoginActivity.class);
-                    //startActivity(intent);
-                //}
-            //}
-
-        //});
-
-        //return view;
-        //}
-    //}
 
             @Override
             public void onClick(View v) {
@@ -88,6 +59,8 @@ public class LoginMenuFragment extends Fragment {
                     @Override
                     public void handleResponse(BackendlessUser response) {
                         Toast.makeText(getActivity(), "You have logged in!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
                     }
 
                     @Override
@@ -95,7 +68,9 @@ public class LoginMenuFragment extends Fragment {
                         Toast.makeText(getActivity(), "Logging in failed", Toast.LENGTH_SHORT).show();
                     }
 
-                });
+
+                },
+                true);
             }
 
 
