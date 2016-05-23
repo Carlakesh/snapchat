@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
 
         Backendless.initApp(this, APP_ID, SECRET_KEY, VERSION);
         if (Backendless.UserService.loggedInUser() == "" ){
-             LoginMenuFragment loginMenu = new LoginMenuFragment();
-              getSupportFragmentManager().beginTransaction().add(R.id.container, loginMenu).commit();
+             MenuFragment MenuFragment = new MenuFragment();
+              getSupportFragmentManager().beginTransaction().add(R.id.container, MenuFragment).commit();
         } else {
-            MainMenuFragment = MainMenu = new  MainMenuFragment();
+            MainMenuFragment MainMenu = new  MainMenuFragment();
             getSupportFragmentManager().beginTransaction().add(R.id.container, MainMenu).commit();
         }
     }
