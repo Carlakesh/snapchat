@@ -52,10 +52,13 @@ public class LoggingoutFragment extends Fragment {
                     }
 
                 });
-                    return view;
+
             }
 
         });
+        return view;
+    }
 
     }
+
 
