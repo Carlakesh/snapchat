@@ -10,10 +10,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.lang.reflect.Array;
-import java.util.List;
 
 
 /**
@@ -37,6 +33,7 @@ public class MainMenuFragment extends Fragment {
          String[] menuItems = {"My Bomb ",
                                   "Bomber's Posts",
                                     "My Bombers list",
+                                       "Add Friends" ,
                                         "logout"
                                             };
 
@@ -67,6 +64,9 @@ public class MainMenuFragment extends Fragment {
                     Intent intent = new Intent(getActivity(), MyFriendsActivity.class);
                     startActivity(intent);
                 } else if (position == 3) {
+                    Intent intent = new Intent(getActivity(), AddFriendActivity.class);
+                    startActivity(intent);
+                } else if (position == 4) {
                     Intent intent = new Intent(getActivity(), LogoutActivity.class);
                     startActivity(intent);
 
