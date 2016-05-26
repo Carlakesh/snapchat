@@ -32,7 +32,18 @@
 
         <service
             android:name="layout.SnapchatService"
-            android:exported="false"></service>
+            android:exported="false" />
+
+        <receiver
+            android:name=".SnapchatReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.carla.snapchat.ADD_FRIEND_SUCCESS"/>
+                <action android:name="com.example.carla.snapchat.ADD_FRIEND_FAILURE"/>
+            </intent-filter>
+
+        </receiver>
     </application>
 
 </manifest>
