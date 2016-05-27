@@ -9,7 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
 
 
 /**
@@ -33,9 +39,29 @@ public class MainMenuFragment extends Fragment {
          String[] menuItems = {"My Bomb ",
                                   "Bomber's Posts",
                                     "My Bombers list",
-                                       "Add Friends" ,
-                                        "logout"
+                                       "Add Friends"
+
                                             };
+
+        Button logOutButton = (Button)view.findViewById(R.id.logOutButton);
+        logOutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Backendless.UserService.logout(new AsyncCallback<Void>() {
+                    @Override
+                    public void handleResponse(Void response) {
+                        Toast.makeText(getActivity(), "You Logged Out!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void handleFault(BackendlessFault fault) {
+                        Toast.makeText(getActivity(), "You failed to log out", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
 
         ListView listView = (ListView)view.findViewById(R.id.mainMenu);
 
@@ -66,10 +92,6 @@ public class MainMenuFragment extends Fragment {
                 } else if (position == 3) {
                     Intent intent = new Intent(getActivity(), AddFriendActivity.class);
                     startActivity(intent);
-                } else if (position == 4) {
-                    Intent intent = new Intent(getActivity(), LogoutActivity.class);
-                    startActivity(intent);
-
                 }
             }
         });

@@ -10,5 +10,12 @@
     android:id="@+id/container">
 
 
+    <ImageView
+        android:src="@drawable/pink"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
 
 </FrameLayout>

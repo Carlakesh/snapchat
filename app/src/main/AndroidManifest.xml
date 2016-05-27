@@ -41,6 +41,8 @@
             <intent-filter>
                 <action android:name="com.example.carla.snapchat.ADD_FRIEND_SUCCESS"/>
                 <action android:name="com.example.carla.snapchat.ADD_FRIEND_FAILURE"/>
+                <action android:name="com.example.carla.snapchat.FRIEND_REQUEST_SUCCESS"/>
+                <action android:name="com.example.carla.snapchat.FRIEND_REQUEST_FAILURE"/>
             </intent-filter>
 
         </receiver>

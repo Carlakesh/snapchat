@@ -16,7 +16,11 @@ public class SnapchatReceiver extends BroadcastReceiver {
             Toast.makeText(context, "added friend!", Toast.LENGTH_SHORT).show();
         } else if (action.equals(Constants.BROADCAST_ADD_FRIEND_FAILURE)) {
             Toast.makeText(context, "Failed to add friend", Toast.LENGTH_SHORT).show();
-                }
+                } else if (action.equals(Constants.BROADCAST_FRIEND_REQUEST_SUCCESS)) {
+                         Toast.makeText(context, "Friend request sent!", Toast.LENGTH_SHORT).show();
+        }else if (action.equals(Constants.BROADCAST_FRIEND_REQUEST_FAILURE)) {
+                         Toast.makeText(context, "Failed to sent friend request", Toast.LENGTH_SHORT).show();
+        }
         }
 
 }

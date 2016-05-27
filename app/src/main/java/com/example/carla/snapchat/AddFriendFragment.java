@@ -36,7 +36,7 @@ public class AddFriendFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view inflater.inflate(R.layout.fragment_add_friend, container, false);
+        View view = inflater.inflate(R.layout.fragment_add_friend, container, false);
 
         Button addFriendButton = (Button) view.findViewById(R.id.addFriendButton);
         addFriendButton.setOnClickListener(new View.OnClickListener() {
@@ -58,7 +58,7 @@ public class AddFriendFragment extends Fragment {
                 alertDialog.setPositiveButton("Add Friend", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        addFriend(inputField.getText().toString());
+                        sendFriendRequest(inputField.getText().toString());
                         Toast.makeText(getActivity(), "Add friend", Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -70,15 +70,15 @@ public class AddFriendFragment extends Fragment {
         return view;
     }
 
-        private void addFriend(final String friendName) {
+        private void sendFriendRequest(final String friendName) {
             String currentUserId = Backendless.UserService.loggedInUser();
             Backendless.Persistence.of(BackendlessUser.class).findById(currentUserId, new AsyncCallback<BackendlessUser>() {
                 @Override
                 public void handleResponse(BackendlessUser currUser) {
                     Intent intent = new Intent(getActivity(), SnapchatService.class);
-                    intent.setAction(Constants.ACTION_ADD_FRIEND);
-                    intent.putExtra("firstUserName", currUser.getProperty("name").toString());
-                    intent.putExtra("secondUserName", friendName);
+                    intent.setAction(Constants.ACTION_SEND_FRIEND_REQUEST);
+                    intent.putExtra("fromUser", currUser.getProperty("name").toString());
+                    intent.putExtra("toUser", friendName);
 
                     getActivity().startService(intent);
                 }
