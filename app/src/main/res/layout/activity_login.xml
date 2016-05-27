@@ -11,4 +11,11 @@
 tools:context="com.example.carla.snapchat.LoginActivity"
     android:id="@+id/container">
 
+    <ImageView
+        android:src="@drawable/hi"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        />
+
 </RelativeLayout>

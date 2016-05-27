@@ -10,4 +10,7 @@
     tools:context="com.example.carla.snapchat.RegisterActivity"
     android:id="@+id/registerContainer">
 
+
+
 </FrameLayout>
+
